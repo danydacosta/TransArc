@@ -4,7 +4,7 @@ import 'rxjs/Rx';
 
 @Injectable()
 export class TransarcService{
-    http:any;
+    http: any;
     baseUrl: String;
 
     constructor(http:Http){
@@ -14,6 +14,16 @@ export class TransarcService{
 
     public getRegions(){
         return this.http.get(this.baseUrl + 'getRegions.php')
+        .map(res => res.json());
+    }
+
+    public getLinesDirections(regionId){
+        return this.http.get(this.baseUrl + 'getLinesDirections.php?numregion=' + regionId)
+        .map(res => res.json());
+    }
+
+    public getStops(lineDirectionId){
+        return this.http.get(this.baseUrl + 'getStops.php?numlinedirection=' + lineDirectionId)
         .map(res => res.json());
     }
 }

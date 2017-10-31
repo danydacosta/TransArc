@@ -7,8 +7,20 @@
 <ion-content padding>
   <ion-item>
     <ion-label>Région</ion-label>
-    <ion-select [(ngModel)]="selectedRegion">
+    <ion-select [(ngModel)]="selectedRegion" (ionChange)="onSelectedRegionChanged()">
       <ion-option *ngFor="let element of regions" [value]="element['id']">{{element['name']}}</ion-option>
     </ion-select>
+  </ion-item>
+  <ion-item>
+      <ion-label>Lignes - directions</ion-label>
+      <ion-select [(ngModel)]="selectedLineDirection" (ionChange)="onSelectedLineDirectionChanged()">
+        <ion-option *ngFor="let element of linesDirections" [value]="element['id']">{{element['name']}}</ion-option>
+      </ion-select>
+  </ion-item>
+  <ion-item>
+      <ion-label>Arrêts</ion-label>
+      <ion-select [(ngModel)]="selectedStop">
+        <ion-option *ngFor="let element of stops" [value]="element['id']">{{element['name']}}</ion-option>
+      </ion-select>
   </ion-item>
 </ion-content>
