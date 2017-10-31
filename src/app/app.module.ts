@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { MapPage } from '../pages/map/map';
 import { AboutPage } from '../pages/about/about';
 import { PickerPage } from '../pages/picker/picker';
+import { SchedulePage } from '../pages/schedule/schedule';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -17,6 +18,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MapPage,
     AboutPage,
     PickerPage,
+    SchedulePage,
     TabsPage
   ],
   imports: [
@@ -29,6 +31,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MapPage,
     AboutPage,
     PickerPage,
+    SchedulePage,
     TabsPage
   ],
   providers: [
