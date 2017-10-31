@@ -7,14 +7,17 @@ import { TransarcService } from '../../app/services/transarc.services';
   templateUrl: 'picker.html'
 })
 export class PickerPage {
+  //Array des pickers
   regions: Array<any>;
   linesDirections: Array<any>;
   stops: Array<any>;
 
+  //Elements sélectionnés des array
   selectedRegion: any;
   selectedLineDirection: any;
   selectedStop: any;
 
+  //TransarcAPI
   taService: any;
 
   constructor(public navCtrl: NavController, private transarcService:TransarcService) {
