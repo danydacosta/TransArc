@@ -8,14 +8,13 @@ import { TransarcService } from '../../app/services/transarc.services';
 })
 export class PickerPage {
   //response: any;
-  text: String;
+  regions: Array<any>;
 
   constructor(public navCtrl: NavController, private transarcService:TransarcService) {
     transarcService.Test().subscribe(response => {
-      this.text = response[0]['name'];
-    });
-
-    
+      this.regions = response;
+      console.log(this.regions);
+    });    
   }
 
 }
