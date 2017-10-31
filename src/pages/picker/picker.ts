@@ -12,7 +12,7 @@ export class PickerPage {
 
   constructor(public navCtrl: NavController, private transarcService:TransarcService) {
     transarcService.Test().subscribe(response => {
-      console.log(response);
+      this.text = response[0]['name'];
     });
 
     
