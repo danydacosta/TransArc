@@ -9,7 +9,12 @@ export class TransarcService{
 
     constructor(http:Http){
         this.http = http;
-        this.baseUrl = 'https://www.reddit.com/r';
+        this.baseUrl = 'http://localhost/transarcserver/api/';
+    }
+
+    public Test(){
+        return this.http.get(this.baseUrl + 'getRegions.php')
+        .map(res => res.json());
     }
 
     /*getPosts(category, limit){
