@@ -12,13 +12,8 @@ export class TransarcService{
         this.baseUrl = 'http://localhost/transarcserver/api/';
     }
 
-    public Test(){
+    public getRegions(){
         return this.http.get(this.baseUrl + 'getRegions.php')
         .map(res => res.json());
     }
-
-    /*getPosts(category, limit){
-        return this.http.get(this.baseUrl+'/'+category+'/top.json?limit='+limit)
-            .map(res => res.json());
-    }*/
 }

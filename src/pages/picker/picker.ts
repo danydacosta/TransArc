@@ -11,7 +11,7 @@ export class PickerPage {
   regions: Array<any>;
 
   constructor(public navCtrl: NavController, private transarcService:TransarcService) {
-    transarcService.Test().subscribe(response => {
+    transarcService.getRegions().subscribe(response => {
       this.regions = response;
       console.log(this.regions);
     });    
