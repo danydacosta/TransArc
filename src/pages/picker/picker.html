@@ -23,5 +23,5 @@
         <ion-option *ngFor="let element of stops" [value]="element['id']">{{element['name']}}</ion-option>
       </ion-select>
   </ion-item>
-  <button ion-button round block>Valider</button>
+  <button ion-button round block (click)="onShowScheduleButtonClicked()">Afficher les horaires</button>
 </ion-content>

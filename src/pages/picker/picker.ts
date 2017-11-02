@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TransarcService } from '../../app/services/transarc.services';
+import { SchedulePage } from '../schedule/schedule'
 
 @Component({
   selector: 'page-picker',
@@ -20,8 +21,12 @@ export class PickerPage {
   //TransarcAPI
   taService: any;
 
+  //NavController
+  navController: any;
+
   constructor(public navCtrl: NavController, private transarcService:TransarcService) {
     this.taService = transarcService;  
+    this.navController = navCtrl;
   }
 
   //Chargement de la page
@@ -48,6 +53,11 @@ export class PickerPage {
       this.stops = response;
       console.log(this.stops);
     }); 
+  }
+
+  //Click sur le bouton de validation
+  onShowScheduleButtonClicked(){
+    this.navController.push(SchedulePage, {param: 'test'});
   }
 
 }
